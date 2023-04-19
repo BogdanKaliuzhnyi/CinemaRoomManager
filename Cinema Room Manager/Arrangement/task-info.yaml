@@ -80,7 +80,7 @@ files:
 - name: src/cinema/objects/Room.java
   visible: true
   learner_created: true
-feedback_link: https://hyperskill.org/projects/133/stages/709/implement#comment
+feedback_link: https://hyperskill.org/learn/step/11105#comment
 status: Solved
 feedback:
   message: Congratulations!

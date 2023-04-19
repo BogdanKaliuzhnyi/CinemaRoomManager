@@ -173,9 +173,9 @@ files:
 - name: src/cinema/objects/CalculatingRoomSeatSize.java
   visible: true
   learner_created: true
-feedback_link: https://hyperskill.org/projects/133/stages/710/implement#comment
+feedback_link: https://hyperskill.org/learn/step/11106#comment
 status: Solved
 feedback:
   message: Congratulations!
   time: "Wed, 19 Apr 2023 08:21:07 UTC"
-record: -1
+record: 2
