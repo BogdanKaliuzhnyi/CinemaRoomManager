@@ -127,6 +127,55 @@ files:
         }
     }
   learner_created: false
+- name: src/cinema/objects/Room.java
+  visible: true
+  text: |
+    package cinema.objects;
+
+    public class Room {
+        int rows;
+        int columns;
+        char[][] seats;
+
+        public Room(int rows, int columns) {
+            this.rows = rows;
+            this.columns = columns;
+            seats = new char[rows][columns];
+            for (int i = 0; i < rows; i++) {
+                for (int j = 0; j < columns; j++) {
+                    seats[i][j] = 'S';
+                }
+            }
+
+        }
+
+        public void reserve(int row, int column) {
+            seats[row][column] = 'X';
+        }
+
+        public String toString() {
+            String s = "  ";
+            for (int j = 0; j < columns; j++){
+                s += j + 1 + " ";
+            }
+            s += "\n";
+            for (int i = 0; i < rows; i++) {
+                s += i + 1 + " ";
+                for (int j = 0; j < columns; j++) {
+                    s += seats[i][j] + " ";
+                }
+                s += "\n";
+            }
+            return s;
+        }
+    }
+  learner_created: true
+- name: src/cinema/objects/CalculatingRoomSeatSize.java
+  visible: true
+  learner_created: true
 feedback_link: https://hyperskill.org/projects/133/stages/710/implement#comment
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Wed, 19 Apr 2023 08:21:07 UTC"
 record: -1
