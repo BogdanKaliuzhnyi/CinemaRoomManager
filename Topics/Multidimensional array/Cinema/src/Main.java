@@ -1,10 +1,12 @@
 import java.util.Scanner;
+
 class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
         int n = sc.nextInt();
         int m = sc.nextInt();
+        int freeInRow = 1;
         int k;
         int[][] room = new int[n][m];
 
@@ -30,7 +32,7 @@ class Main {
                     freeInRow++;
                     if (k == freeInRow) {
                         return i + 1;
-                    }
+                    } 
                 }
                 else {
                     freeInRow = 1;
