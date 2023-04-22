@@ -10,6 +10,7 @@ class ArrayOperations {
                 }
             }
         }
+
         return array;
     }
 }
