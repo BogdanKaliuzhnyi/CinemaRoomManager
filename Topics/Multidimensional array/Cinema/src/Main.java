@@ -5,7 +5,6 @@ class Main {
 
         int n = sc.nextInt();
         int m = sc.nextInt();
-        int freeInRow = 1;
         int k;
         int[][] room = new int[n][m];
 
