@@ -1,20 +1,22 @@
 package cinema.objects;
 
 public class CalculatingRoomSeatSize {
-    int rows;
-    int columns;
+    int roomRows;
+    int roomColumns;
+    int fullPrice = 10;
+    int discountPrice = 8;
+    int bigRoom = 60;
+    boolean isBigRoom = false;
 
     public CalculatingRoomSeatSize(int rows, int columns) {
-        this.rows = rows;
-        this.columns = columns;
+        this.roomRows = rows;
+        this.roomColumns = rows;
     }
 
-    public int runCalculation(int rows, int columns) {
-        int fullPrice = 10;
-        int discountPrice = 8;
+    public int runRoomCalculation(int rows, int columns) {
+
         int totalIncome = 0;
         int amountOfSeats = rows * columns;
-        int bigRoom = 60;
         if (amountOfSeats > bigRoom) {
             totalIncome = columns * (rows / 2) * fullPrice + (rows - rows / 2) * columns
                     * discountPrice;
@@ -22,6 +24,23 @@ public class CalculatingRoomSeatSize {
             totalIncome = amountOfSeats * fullPrice;
         }
         return totalIncome;
+    }
+
+    public int runSeatPriceCalculation(/*int roomRows, int roomColumns, */int row) {
+        int payment;
+        int amountOfSeats = roomRows * roomColumns;
+        isBigRoom = bigRoom < amountOfSeats;
+
+        if (isBigRoom) { //9/2 = 4
+            payment = roomRows / 2 < row ? discountPrice : fullPrice; // 7-8
+            return payment;
+        } else {
+            return fullPrice;
+        }
+
+
+
+
     }
 }
 

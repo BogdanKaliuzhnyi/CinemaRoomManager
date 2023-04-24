@@ -14,15 +14,14 @@ public class Room {
                 seats[i][j] = 'S';
             }
         }
-
     }
 
     public void reserve(int row, int column) {
-        seats[row][column] = 'X';
+        seats[row - 1][column - 1] = 'B';
     }
 
     public String toString() {
-        String s = "  ";
+        String s = "Cinema:\n  ";
         for (int j = 0; j < columns; j++){
             s += j + 1 + " ";
         }

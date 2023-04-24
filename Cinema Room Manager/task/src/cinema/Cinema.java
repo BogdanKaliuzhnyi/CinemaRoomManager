@@ -6,25 +6,39 @@ import cinema.objects.Room;
 public class Cinema {
 
     public static void main(String[] args) {
-        int rows;
-        int columns;
+        int roomRows;
+        int roomColumns;
+        int rowsReserve;
+        int columnReserve;
 
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the number of rows:");
-        rows = sc.nextInt();
+        roomRows = sc.nextInt();
         System.out.println("Enter the number of seats in each row:");
-        columns = sc.nextInt();
+        roomColumns = sc.nextInt();
 
-        CalculatingRoomSeatSize calculator = new CalculatingRoomSeatSize(rows, columns);
-        int totalIncome = calculator.runCalculation(rows, columns);
-        System.out.println("Total income:\n" + "$" + totalIncome);
-
-        /*Room room = new Room(7, 8);
-        System.out.println("Cinema:");
+        Room room = new Room(roomRows, roomColumns);
+        //System.out.println("Cinema:");
         System.out.println(room);
 
-        room.reserve(4,5);
-        room.reserve(2,7);
-        System.out.println(room);*/
+        //room.reserve(4,5); test reserving seats
+        //System.out.println(room);
+
+        //CalculatingRoomSeatSize calculator = new CalculatingRoomSeatSize(rows, columns);
+        //int totalIncome = calculator.runCalculation(rows, columns);
+        //System.out.println("Total income:\n" + "$" + totalIncome);
+
+        System.out.println("Enter a row number:");
+        rowsReserve = sc.nextInt();
+        System.out.println("Enter a seat number in that row:");
+        columnReserve = sc.nextInt();
+
+        CalculatingRoomSeatSize reservingSeat = new CalculatingRoomSeatSize(roomRows, roomColumns);
+        System.out.print("\nTicket price: $");
+        System.out.println(reservingSeat.runSeatPriceCalculation(rowsReserve) + "\n");
+
+        room.reserve(rowsReserve, columnReserve);
+        System.out.println(room);
+
     }
 }
