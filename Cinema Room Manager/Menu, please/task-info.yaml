@@ -341,6 +341,101 @@ files:
         }
     }
   learner_created: false
+- name: src/cinema/objects/Room.java
+  visible: true
+  text: |
+    package cinema.objects;
+
+    public class Room {
+        int rows;
+        int columns;
+        char[][] seats;
+
+        public Room(int rows, int columns) {
+            this.rows = rows;
+            this.columns = columns;
+            seats = new char[rows][columns];
+            for (int i = 0; i < rows; i++) {
+                for (int j = 0; j < columns; j++) {
+                    seats[i][j] = 'S';
+                }
+            }
+        }
+
+        public void reserve(int row, int column) {
+            seats[row - 1][column - 1] = 'B';
+        }
+
+        public String toString() {
+            String s = "Cinema:\n  ";
+            for (int j = 0; j < columns; j++){
+                s += j + 1 + " ";
+            }
+            s += "\n";
+            for (int i = 0; i < rows; i++) {
+                s += i + 1 + " ";
+                for (int j = 0; j < columns; j++) {
+                    s += seats[i][j] + " ";
+                }
+                s += "\n";
+            }
+            return s;
+        }
+    }
+  learner_created: true
+- name: src/cinema/objects/CalculatingRoomSeatSize.java
+  visible: true
+  text: |+
+    package cinema.objects;
+
+    public class CalculatingRoomSeatSize {
+        int roomRows;
+        int roomColumns;
+        int fullPrice = 10;
+        int discountPrice = 8;
+        int bigRoom = 60;
+        boolean isBigRoom = false;
+
+        public CalculatingRoomSeatSize(int rows, int columns) {
+            this.roomRows = rows;
+            this.roomColumns = rows;
+        }
+
+        public int runRoomCalculation(int rows, int columns) {
+
+            int totalIncome = 0;
+            int amountOfSeats = rows * columns;
+            if (amountOfSeats > bigRoom) {
+                totalIncome = columns * (rows / 2) * fullPrice + (rows - rows / 2) * columns
+                        * discountPrice;
+            } else {
+                totalIncome = amountOfSeats * fullPrice;
+            }
+            return totalIncome;
+        }
+
+        public int runSeatPriceCalculation(/*int roomRows, int roomColumns, */int row) {
+            int payment;
+            int amountOfSeats = roomRows * roomColumns;
+            isBigRoom = bigRoom < amountOfSeats;
+
+            if (isBigRoom) { //9/2 = 4
+                payment = roomRows / 2 < row ? discountPrice : fullPrice; // 7-8
+                return payment;
+            } else {
+                return fullPrice;
+            }
+
+
+
+
+        }
+    }
+
+  learner_created: true
 feedback_link: https://hyperskill.org/learn/step/11108#comment
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Mon, 01 May 2023 10:16:12 UTC"
 record: -1

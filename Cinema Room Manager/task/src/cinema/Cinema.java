@@ -10,6 +10,7 @@ public class Cinema {
         int roomColumns;
         int rowsReserve;
         int columnReserve;
+        int menu = -1;
 
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the number of rows:");
@@ -18,27 +19,32 @@ public class Cinema {
         roomColumns = sc.nextInt();
 
         Room room = new Room(roomRows, roomColumns);
-        //System.out.println("Cinema:");
-        System.out.println(room);
 
-        //room.reserve(4,5); test reserving seats
-        //System.out.println(room);
+        while (menu != 0) {
+            showMenu();
+            menu = sc.nextInt();
+            switch (menu) {
+                case 1: // Showing the seats;
+                    System.out.println(room.toString());
+                    break;
+                case 2:
+                    System.out.println("Enter a row number:");
+                    rowsReserve = sc.nextInt();
+                    System.out.println("Enter a seat number in that row:");
+                    columnReserve = sc.nextInt();
 
-        //CalculatingRoomSeatSize calculator = new CalculatingRoomSeatSize(rows, columns);
-        //int totalIncome = calculator.runCalculation(rows, columns);
-        //System.out.println("Total income:\n" + "$" + totalIncome);
+                    CalculatingRoomSeatSize reservingSeat = new CalculatingRoomSeatSize(roomRows, roomColumns);
+                    System.out.print("\nTicket price: $");
+                    System.out.println(reservingSeat.runSeatPriceCalculation(rowsReserve) + "\n");
+                    room.reserve(rowsReserve, columnReserve);
+                    break;
+                default:
+                    System.out.println("Wrong input! Please, try again.");
+            }
+        }
+    }
 
-        System.out.println("Enter a row number:");
-        rowsReserve = sc.nextInt();
-        System.out.println("Enter a seat number in that row:");
-        columnReserve = sc.nextInt();
-
-        CalculatingRoomSeatSize reservingSeat = new CalculatingRoomSeatSize(roomRows, roomColumns);
-        System.out.print("\nTicket price: $");
-        System.out.println(reservingSeat.runSeatPriceCalculation(rowsReserve) + "\n");
-
-        room.reserve(rowsReserve, columnReserve);
-        System.out.println(room);
-
+    public static void showMenu () {
+        System.out.println("\n1. Show the seats \n2. Buy a ticket \n0. Exit");
     }
 }

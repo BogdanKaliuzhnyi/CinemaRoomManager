@@ -26,6 +26,15 @@
             <option value="$PROJECT_DIR$/Topics/Branching statements/The same results" />
             <option value="$PROJECT_DIR$/Topics/Branching statements/Theory" />
             <option value="$PROJECT_DIR$/Topics/Branching statements/What does the code print" />
+            <option value="$PROJECT_DIR$/Topics/Declaring a method/Calculating factorials" />
+            <option value="$PROJECT_DIR$/Topics/Declaring a method/Division" />
+            <option value="$PROJECT_DIR$/Topics/Declaring a method/Method signature" />
+            <option value="$PROJECT_DIR$/Topics/Declaring a method/The sign of a number" />
+            <option value="$PROJECT_DIR$/Topics/Declaring a method/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Functional decomposition/A quadratic equation" />
+            <option value="$PROJECT_DIR$/Topics/Functional decomposition/Kate's math function" />
+            <option value="$PROJECT_DIR$/Topics/Functional decomposition/The main tools of functional decomposition" />
+            <option value="$PROJECT_DIR$/Topics/Functional decomposition/Theory" />
             <option value="$PROJECT_DIR$/Topics/Iterating over arrays/Does an array contain N" />
             <option value="$PROJECT_DIR$/Topics/Iterating over arrays/Select one loop" />
             <option value="$PROJECT_DIR$/Topics/Iterating over arrays/The index of the first max in an array" />
@@ -40,7 +49,14 @@
             <option value="$PROJECT_DIR$/Topics/Multidimensional array/Practical applications" />
             <option value="$PROJECT_DIR$/Topics/Multidimensional array/Swap the columns" />
             <option value="$PROJECT_DIR$/Topics/Multidimensional array/Theory" />
+            <option value="$PROJECT_DIR$/Topics/String/ Hello  string" />
+            <option value="$PROJECT_DIR$/Topics/String/Calling basic methods" />
+            <option value="$PROJECT_DIR$/Topics/String/Check burgs" />
+            <option value="$PROJECT_DIR$/Topics/String/Finding string expressions" />
+            <option value="$PROJECT_DIR$/Topics/String/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Switch statement/A simple calculator" />
             <option value="$PROJECT_DIR$/Topics/Switch statement/Shape" />
+            <option value="$PROJECT_DIR$/Topics/Switch statement/Test learners" />
             <option value="$PROJECT_DIR$/Topics/Switch statement/Theory" />
             <option value="$PROJECT_DIR$/util" />
           </set>
