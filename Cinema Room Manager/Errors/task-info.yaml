@@ -614,6 +614,52 @@ files:
         }
     }
   learner_created: false
+- name: src/cinema/objects/Room.java
+  visible: true
+  text: |
+    package cinema.objects;
+
+    public class Room {
+        int rows;
+        int columns;
+        char[][] seats;
+
+        public Room(int rows, int columns) {
+            this.rows = rows;
+            this.columns = columns;
+            seats = new char[rows][columns];
+            for (int i = 0; i < rows; i++) {
+                for (int j = 0; j < columns; j++) {
+                    seats[i][j] = 'S';
+                }
+            }
+        }
+
+        public void reserve(int row, int column) {
+            seats[row - 1][column - 1] = 'B';
+        }
+
+        public String toString() {
+            String s = "Cinema:\n  ";
+            for (int j = 0; j < columns; j++){
+                s += j + 1 + " ";
+            }
+            s += "\n";
+            for (int i = 0; i < rows; i++) {
+                s += i + 1 + " ";
+                for (int j = 0; j < columns; j++) {
+                    s += seats[i][j] + " ";
+                }
+                s += "\n";
+            }
+            return s;
+        }
+    }
+  learner_created: true
 feedback_link: https://hyperskill.org/learn/step/11109#comment
-status: Unchecked
+status: Solved
+feedback:
+  message: Well done! You've finished the project. Select a new project on <a href="https://hyperskill.org/projects">Hyperskill</a>
+    to continue learning.
+  time: "Thu, 04 May 2023 14:06:07 UTC"
 record: -1
